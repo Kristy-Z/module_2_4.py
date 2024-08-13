@@ -4,14 +4,18 @@ primes=[]
 not_primes=[]
 
 for num in numbers:
- for j in range(2,15):
-   is_prime=True
-  if num//j>=1:
-    primes.append(num)
- break
+    if num == 1:
+        continue
+    is_prime = True
+    for j in range(2,num//2+1):
+        if num%j == 0:
+            is_prime=False
+            break
+        if is_prime:
+            primes.append(num)
 
 else:
- not_primes.append(num)
+    not_primes.append(num)
 
 print('Primes: ', primes)
 print('Not_primes: ', not_primes)
